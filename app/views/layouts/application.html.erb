@@ -11,6 +11,10 @@
     <% flash.each do |type, msg|  %>
       <%= msg %>
     <% end %>
+    <%= form_tag :search, method: :get, class: "nav-bar form-inline nav-form" do %>
+      <%= text_field_tag :zip_code, nil, placeholder: "Enter zip code", class: "form-control" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
