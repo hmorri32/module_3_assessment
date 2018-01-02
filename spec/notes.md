@@ -31,25 +31,25 @@ Work through the following challenges and get as far as you can in the allotted 
 
 We need an API for the application that can both read and write data. Start by focusing on functionality for items. All of this should happen in a dedicated, versioned controller.
 
-###DONE ###
+###DONE
   When I send a GET request to `/api/v1/items`
   I receive a 200 JSON response containing all items
     *And each item has an id, name, description, and image_url but not the created_at or updated_at*
 
-###DONE ###
+###DONE
   When I send a GET request to `/api/v1/items/1`
   I receive a 200 JSON response containing the id, name, description, and image_url but not the created_at or updated_at
 
-###DONE ###
+###DONE
   When I send a DELETE request to `/api/v1/items/1`
   I receive a 204 JSON response if the record is successfully deleted
 
-###DONE ###
+###DONE
   When I send a POST request to `/api/v1/items` with a name, description, and image_url
   I receive a 201 JSON  response if the record is successfully created
   And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
 
-###DONE###
+###DONE
   PUT request. I built this one, ultra crud.
 
 * Verify that your non-GET requests work using Postman or curl. (Hint: `ActionController::API`). Why doesn't the default `ApplicationController` support POST and PUT requests?
@@ -65,7 +65,7 @@ Once you're done getting your key, use the [Stores documentation](http://bestbuy
 * It's not necessary, or even advised, that you store anything in a database from the Best Buy API.
 * Display the returned stores and their attributes returned from the API query in a logical and intuitive HTML layout. (This does not need to be styled).
 
-###DONE###
+###DONE
   ```
   As a user
   When I visit "/"
@@ -78,23 +78,23 @@ Once you're done getting your key, use the [Stores documentation](http://bestbuy
   ```
 
 #### Bonus
+###DONE
+  If you finish the other stories, things are refactored, and want an extra challenge, try this out.
 
-If you finish the other stories, things are refactored, and want an extra challenge, try this out.
+  ```
+  (This is a continuation of the story above)
 
-```
-(This is a continuation of the story above)
-
-And I should see pagination links below the search results for the number of pages (2 in this case)
-And `1` is my current page but isn't a clickable link
-And `2` is a clickable link
-When I click `2`
-Then I should be taken to the next page of search results
-Then my current path should be "/search" (ignoring params)
-And in the params I should see `page=2`
-And I should see stores within 25 miles
-And I should see a message that says "17 Total Stores"
-And I should see the next 6 results
-And I should see the long name, city, distance, phone number and store type for each of the next 6 results
-```
+  And I should see pagination links below the search results for the number of pages (2 in this case)
+  And `1` is my current page but isn't a clickable link
+  And `2` is a clickable link
+  When I click `2`
+  Then I should be taken to the next page of search results
+  Then my current path should be "/search" (ignoring params)
+  And in the params I should see `page=2`
+  And I should see stores within 25 miles
+  And I should see a message that says "17 Total Stores"
+  And I should see the next 6 results
+  And I should see the long name, city, distance, phone number and store type for each of the next 6 results
+  ```
 
 *NO HASHES IN VIEW!
