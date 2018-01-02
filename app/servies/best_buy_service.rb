@@ -16,10 +16,10 @@ class BestBuyService
   end
 
   private
-  attr_reader :client, :zip_code
+    attr_reader :client, :zip_code
 
-  def get_json(url)
-    response = client.get(url)
-    JSON.parse(response.body, symbolize_names: true)
-  end
+    def get_json(url)
+      response = client.get(url)
+      JSON.parse(response.body, symbolize_names: true)
+    end
 end
