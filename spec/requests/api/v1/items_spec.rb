@@ -77,8 +77,11 @@ RSpec.describe "ITEMS API", type: :request do
     context "given valid attributes" do
       before { post "/api/v1/items", params: cool_attributes }
 
-      it "cretes a item" do
+      it "creates a item" do
         expect(Item.all.count).to eq(101)
+        expect(json['name']).to eq('cool item')
+        expect(json["created_at"]).to be_nil
+        expect(json["updated_at"]).to be_nil
       end
 
       it "returns HTTP status code 201" do
