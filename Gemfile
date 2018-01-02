@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'rails', '~> 5.1.2'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
@@ -17,11 +16,15 @@ gem 'faker'
 gem 'therubyracer'
 gem 'bootstrap-sass'
 gem 'faraday'
+gem 'figaro'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
+  gem 'launchy'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :test do
