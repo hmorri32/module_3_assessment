@@ -19,12 +19,6 @@
       <li>
         <a href="/orders">Orders</a>
       </li>
-      <li>
-        <%= form_tag :search, method: :get, class: "form-inline nav-form" do %>
-        <%= text_field_tag :zip_code, nil, placeholder: "Enter zip code", class: "form-control" %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
-      </li>
     </ul>
   </div>
 </nav>
