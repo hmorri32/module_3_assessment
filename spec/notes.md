@@ -49,6 +49,9 @@ We need an API for the application that can both read and write data. Start by f
   I receive a 201 JSON  response if the record is successfully created
   And I receive a JSON response containing the id, name, description, and image_url but not the created_at or updated_at
 
+###DONE###
+  PUT request. I built this one, ultra crud.
+
 * Verify that your non-GET requests work using Postman or curl. (Hint: `ActionController::API`). Why doesn't the default `ApplicationController` support POST and PUT requests?
 
 ### 2. Consume 3rd party API
