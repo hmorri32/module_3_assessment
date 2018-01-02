@@ -1,5 +1,5 @@
 class Api::V1::ItemsController < Api::V1::BaseController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :update]
 
   def index
     json_response Item.all
@@ -16,6 +16,11 @@ class Api::V1::ItemsController < Api::V1::BaseController
 
   def destroy
     @item.destroy
+    head :no_content
+  end
+
+  def update
+    @item.update!(item_params)
     head :no_content
   end
 
