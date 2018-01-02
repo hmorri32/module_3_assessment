@@ -71,4 +71,31 @@ RSpec.describe "ITEMS API", type: :request do
       end
     end
   end
+
+  describe "POST /api/v1/items" do
+    let(:cool_attributes) { { name: 'cool item', description: 'carne a suh dude', image_url: 'whatever' } }
+    context "given valid attributes" do
+      before { post "/api/v1/items", params: cool_attributes }
+
+      it "cretes a item" do
+        expect(Item.all.count).to eq(101)
+      end
+
+      it "returns HTTP status code 201" do
+        expect(response).to have_http_status(201)
+      end
+    end
+
+    context "given invalid params" do
+      before { post "/api/v1/items", params: { cool_guy: 'mcgee'} }
+
+      it "returns HTTP status code 422" do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns a failure message' do
+        expect(response.body).to match(/Validation failed: Name can't be blank/)
+      end
+    end
+  end
 end
