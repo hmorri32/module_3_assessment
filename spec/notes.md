@@ -65,16 +65,17 @@ Once you're done getting your key, use the [Stores documentation](http://bestbuy
 * It's not necessary, or even advised, that you store anything in a database from the Best Buy API.
 * Display the returned stores and their attributes returned from the API query in a logical and intuitive HTML layout. (This does not need to be styled).
 
-```
-As a user
-When I visit "/"
-And I fill in a search box with "80202" and click "search"
-Then my current path should be "/search" (ignoring params)
-And I should see stores within 25 miles of 80202
-And I should see a message that says "17 Total Stores"
-And I should see exactly 10 results (There are 17 stores within 25 miles. We want to display 10 on this page and 7 on the next. Get the first page to work first from start to finish and worry about pagination later.)
-And I should see the long name, city, distance, phone number and store type for each of the 10 results
-```
+###DONE###
+  ```
+  As a user
+  When I visit "/"
+  And I fill in a search box with "80202" and click "search"
+  Then my current path should be "/search" (ignoring params)
+  And I should see stores within 25 miles of 80202
+  And I should see a message that says "17 Total Stores"
+  And I should see exactly 10 results (There are 17 stores within 25 miles. We want to display 10 on this page and 7 on the next. Get the first page to work first from start to finish and worry about pagination later.)
+  And I should see the long name, city, distance, phone number and store type for each of the 10 results
+  ```
 
 #### Bonus
 
