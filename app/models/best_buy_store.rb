@@ -9,5 +9,3 @@ class BestBuyStore
     @phone      = data[:phone]
   end
 end
-
-# => {:longName=>"Cherry Creek Shopping Center", :city=>"Denver", :distance=>3.45, :storeType=>"Mobile SAS", :phone=>"303-270-9189"}
