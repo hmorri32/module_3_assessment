@@ -12,7 +12,7 @@ class BestBuyService
   end
 
   def stores_within_25_miles
-    get_json("stores(area(80202,25))?format=json&pageSize=100&show=longName,city,distance,storeType,phone")[:stores]
+    get_json("stores(area(#{@zip_code},25))?format=json&pageSize=100&show=longName,city,distance,storeType,phone")[:stores]
   end
 
   private
