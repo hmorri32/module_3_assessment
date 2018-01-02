@@ -101,4 +101,32 @@ RSpec.describe "ITEMS API", type: :request do
       end
     end
   end
+
+  describe "PUT /api/v1/items:id" do
+    let(:valid_attributes) { { name: 'Beethoven' } }
+    before { put "/api/v1/items/#{item_id}", params: valid_attributes }
+
+    context "when resource exists" do
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+
+      it 'updates the item' do
+        updated = Item.find(item_id)
+        expect(updated.name).to match(/Beethoven/)
+      end
+    end
+
+    context "when resource does not exist" do
+      let(:item_id) { 0 }
+
+      it 'returns HTTP status code 404' do
+        expect(response).to have_http_status(404)
+      end
+
+      it 'returns error message' do
+        expect(response.body).to match(/Couldn't find Item/)
+      end
+    end
+  end
 end
