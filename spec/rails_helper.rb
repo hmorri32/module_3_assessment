@@ -19,12 +19,12 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-VCR.configure do |config|
-  config.cassette_library_dir = "spec/vcr/"
-  config.hook_into :webmock
-  # config.filter_sensitive_data('<>') { }
-  config.default_cassette_options = {:record => :new_episodes}
-end
+# VCR.configure do |config|
+#   config.cassette_library_dir = "spec/vcr/"
+#   config.hook_into :webmock
+#   # config.filter_sensitive_data('<>') { }
+#   config.default_cassette_options = {:record => :new_episodes}
+# end
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
