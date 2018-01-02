@@ -1,11 +1,12 @@
 <h2>All stores within 25 miles of <%= params[:zip_code] %></h2>
 <h4><%= @total.length %> Total Stores</h4>
+
 <% @stores.each do |store| %>
   <h3 class='store-name'><%= store.long_name %></h3>
-  <p><%= store.city %></p>
-  <p>Distance: <%= store.distance %> miles</p>
+  <p> <%= store.city %></p>
+  <p>Distance:   <%= store.distance   %> miles</p>
   <p>Store Type: <%= store.store_type %></p>
-  <p>Contact: <%= store.phone %></p>
+  <p>Contact:    <%= store.phone      %></p>
 <% end %>
 
 <%= will_paginate @stores %>
