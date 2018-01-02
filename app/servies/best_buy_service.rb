@@ -23,11 +23,3 @@ class BestBuyService
     JSON.parse(response.body, symbolize_names: true)
   end
 end
-
-
-# curl "https://api.bestbuy.com/v1/stores(area(55423))?format=json&show=storeType,longName,city,distance,phone&apiKey=YourAPIKey"
-# curl "https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&distance=25&show=phone,storeType,longName,city,distance&apiKey=qy8vdpfcgsxtfw657mnbu7nc"
-
-# curl "https://api.bestbuy.com/v1/stores(area(55423,25))?format=json&show=longName,city,distance,storeType&apiKey=YourAPIKey"
-
-# curl "https://api.bestbuy.com/v1/stores(area(80202,25))?format=json&show=longName,city,distance,storeType,phone&apiKey=qy8vdpfcgsxtfw657mnbu7nc"
