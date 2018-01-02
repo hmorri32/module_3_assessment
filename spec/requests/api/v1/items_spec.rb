@@ -47,4 +47,28 @@ RSpec.describe "ITEMS API", type: :request do
       end
     end
   end
+
+  describe 'DELETE /api/v1/items/:id' do
+    before { delete "/api/v1/items/#{item_id}" }
+    context "given a valid resource" do
+      it 'deletes an item' do
+        expect(Item.all.count).to eq(99)
+      end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+    end
+
+    context "given an invalid resource" do
+      let(:item_id) { 0 }
+      it "returns an error message" do
+        expect(response.body).to match /Couldn't find Item/
+      end
+
+      it "returns status code 404" do
+        expect(response).to have_http_status(404)
+      end
+    end
+  end
 end
